@@ -2,7 +2,7 @@ package decorators;
 
 import product.IProduct;
 
-abstract public class Decorator implements IProduct {
+ public abstract class Decorator implements IProduct {
     protected IProduct product;
     public Decorator(IProduct product) {
         this.product = product;

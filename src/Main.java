@@ -9,7 +9,7 @@ import product.SomeProduct;
 public class Main {
     public static void main(String[] args) {
 
-        IProduct tv=new SomeProduct("TV",130990.0);
+        IProduct tv=new SomeProduct("TV",130_990.0);
 
         IProduct withTax=new TaxDecorator(tv);
         IProduct withDiscount=new DiscountDecorator(withTax);

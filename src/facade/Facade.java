@@ -5,13 +5,16 @@ import product.IProduct;
 import static facade.Subsystems.*;
 
 public class Facade {
+    Payment payment=new Payment();
+    NewOrder newOrder=new NewOrder();
+    Message message=new Message();
 
     public void completeOrder(IProduct product){
-        createOrder(product.getName(),product.getPrice());
+        newOrder.createOrder(product.getName(),product.getPrice());
 
-        sendConfirmation(product.getName());
+        message.sendConfirmation(product.getName());
 
-        processPayment(product.getPrice());
+        payment.processPayment(product.getPrice());
 
     }
 }
