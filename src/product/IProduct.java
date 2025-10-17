@@ -1,6 +1,6 @@
 package product;
 
 public interface IProduct {
-    double getPrice();
+    float getPrice();
     String getName();
 }

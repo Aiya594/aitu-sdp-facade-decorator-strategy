@@ -8,7 +8,7 @@ import product.IProduct;
         this.product = product;
     }
 
-    public double getPrice() {
+    public float getPrice() {
         return product.getPrice();
     }
     public String getName() {

@@ -2,16 +2,16 @@ package product;
 
 public class SomeProduct implements IProduct {
 
-    private String productName;
-    private double price;
+    private final String productName;
+    private final float price;
 
-    public SomeProduct(String productName, double price) {
+    public SomeProduct(String productName, float price) {
         this.productName = productName;
         this.price = price;
     }
 
     @Override
-    public double getPrice() {
+    public float getPrice() {
         return price;
     }
 
