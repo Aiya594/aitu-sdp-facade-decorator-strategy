@@ -2,7 +2,6 @@ package facade;
 
 import product.IProduct;
 
-import static facade.Subsystems.*;
 
 public class Facade {
     Payment payment=new Payment();

@@ -8,11 +8,11 @@ public class DiscountDecorator extends Decorator {
     }
 
     public double getPrice() {
-        return product.getPrice()*0.95;
+        return super.getPrice()*0.95;
     }
 
-    @Override
+
     public String getName() {
-        return product.getName()+"+discount(5%)";
+        return super.getName()+"+discount(5%)";
     }
 }

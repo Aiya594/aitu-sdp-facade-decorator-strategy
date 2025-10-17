@@ -9,11 +9,11 @@ public class TaxDecorator extends Decorator {
     }
 
     public double getPrice() {
-        return product.getPrice() * 1.10;
+        return super.getPrice() * 1.10;
     }
 
     public String getName() {
-        return product.getName()+"+Tax(10%)";
+        return super.getName()+"+Tax(10%)";
     }
 
 }
