@@ -1,5 +1,6 @@
 import decorators.DiscountDecorator;
 import decorators.TaxDecorator;
+import deliveryStrategy.concrete.ExpressDelivery;
 import facade.OrderFacade;
 import product.IProduct;
 import product.SomeProduct;
@@ -8,9 +9,11 @@ import product.SomeProduct;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        IProduct orderWithTaxWithDiscount=new DiscountDecorator(new TaxDecorator(new SomeProduct("TV",130_990.0f)));
-        OrderFacade order=new OrderFacade();
-        order.completeOrder(orderWithTaxWithDiscount);
+        IProduct product =new DiscountDecorator(
+                new TaxDecorator(new SomeProduct("TV",130_990f))
+        );
 
+        OrderFacade order=new OrderFacade();
+        order.completeOrder(product, new ExpressDelivery());
     }
 }
