@@ -2,7 +2,6 @@ import decorators.DiscountDecorator;
 import decorators.TaxDecorator;
 import deliveryStrategy.IDeliveryStrategy;
 import deliveryStrategy.concrete.ExpressDelivery;
-import deliveryStrategy.concrete.PickupDelivery;
 import facade.OrderFacade;
 import observe.User;
 import product.IProduct;
@@ -21,18 +20,22 @@ public class Main {
         User aizada = new User("Aizada");
         User nastya= new User("Nastya");
 
-        System.out.println("2 observers subscribed for phone:");
-        phone.addObserver(aizada);
-        phone.addObserver(nastya);
+        System.out.printf("2 observers subscribed for %s:\n",phone.getName());
+        phone.subscribe(aizada);
+        phone.subscribe(nastya);
 
         System.out.println("\nChange the price and notify observers:");
         phone.setPrice(135000f);
         phone.setPrice(120000f);
 
-        phone.removeObserver(aizada);
+        //nastya subcribes for tv
+        tv.subscribe(nastya);
+
+        phone.unsubscribe(aizada);
 
         System.out.println("\nChange the price and notify observers:");
         phone.setPrice(100000f);
+        tv.setPrice(50000f);
 
         System.out.println("\nOrder:");
         IProduct product =new DiscountDecorator(

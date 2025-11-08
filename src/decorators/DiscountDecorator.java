@@ -1,6 +1,7 @@
 package decorators;
 
 import product.IProduct;
+import visitor.IOrderVisitor;
 
 public class DiscountDecorator extends Decorator {
     String discount="+discount(5%)";
@@ -16,5 +17,10 @@ public class DiscountDecorator extends Decorator {
 
     public String getName() {
         return super.getName()+discount;
+    }
+
+    @Override
+    public void accept(IOrderVisitor visitor) {
+        product.accept(visitor);
     }
 }

@@ -23,7 +23,8 @@ public class DeliveryInfo {
 
     @Override
     public String toString() {
-        return "delivery type: "+getDeliveryType()
+        return " Report for customer:" +
+                "\ndelivery type: "+getDeliveryType()
                 +"\ndelivery days: "+getDeliveryDays()
                 +"\nprice: "+getPrice();
     }

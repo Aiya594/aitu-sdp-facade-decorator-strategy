@@ -2,6 +2,7 @@ package product;
 
 import observe.IObserver;
 import observe.ISubject;
+import visitor.IOrderVisitor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,11 @@ public class SomeProduct implements IProduct, ISubject {
     }
 
 
+    public void accept(IOrderVisitor visitor) {
+        visitor.visitProduct(this);
+    }
+
+
     public void setPrice(float newPrice) {
         if (this.price != newPrice) {
             this.price = newPrice;
@@ -37,12 +43,12 @@ public class SomeProduct implements IProduct, ISubject {
     }
 
     @Override
-    public void addObserver(IObserver observer) {
+    public void subscribe(IObserver observer) {
         observers.add(observer);
     }
 
     @Override
-    public void removeObserver(IObserver observer) {
+    public void unsubscribe(IObserver observer) {
         observers.remove(observer);
     }
 
