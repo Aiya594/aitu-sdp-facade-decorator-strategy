@@ -2,6 +2,7 @@ import decorators.DiscountDecorator;
 import decorators.TaxDecorator;
 import deliveryStrategy.IDeliveryStrategy;
 import deliveryStrategy.concrete.ExpressDelivery;
+import deliveryStrategy.concrete.StandardDelivery;
 import facade.OrderFacade;
 import observe.User;
 import product.IProduct;
@@ -44,6 +45,8 @@ public class Main {
 
         OrderFacade order=new OrderFacade();
         order.completeOrder(product, new ExpressDelivery());
+
+        order.completeOrder(product, new StandardDelivery());
 
     }
 }

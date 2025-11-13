@@ -8,6 +8,7 @@ import product.IProduct;
 public class AnalyticsVisitor implements IOrderVisitor{
     private float totalPrice = 0;
     private int orderCount = 0;
+
     @Override
     public void visitProduct(IProduct product) {
         totalPrice += product.getPrice();

@@ -7,5 +7,4 @@ import product.IProduct;
 public interface IOrderVisitor {
     void visitProduct(IProduct product);
     void visitPayment(Payment payment);
-
 }
